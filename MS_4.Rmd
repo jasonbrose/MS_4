@@ -1,0 +1,49 @@
+---
+title: "MS_4"
+author: "JBR"
+date: "3/7/2020"
+output: html_document
+---
+```{r, include = FALSE}
+library(tidyverse)
+library(tidyr)
+library(dplyr)
+library(gt)
+library(ggplot2)
+library(tidycensus)
+library(readxl)
+
+options(scipen=999)
+ income <- get_acs(geography = "county",
+  variables = "B19013_001",
+  table = NULL,
+  cache_table = FALSE,
+  year = 2018,
+  endyear = NULL,
+  output = "tidy",
+  state = NULL,
+  county = "New York",
+  geometry = FALSE,
+  keep_geo_vars = FALSE,
+  shift_geo = FALSE,
+  summary_var = NULL,
+  key = NULL,
+  moe_level = 90,
+  survey = "acs5",
+  show_call = FALSE,
+)
+ 
+ 
+```
+
+
+```{r, include = FALSE}
+crime <- read_xlsx("cs-en-us-city-2.xlsx") 
+```
+
+
+
+
+
+Thus far, I have worked with the two data sets I mentioned in my last milestone. Due to issues with anonymizing the main dataset, I might need to pivot on my project. Currently, I have read in OPEN DATA NYC crime excels on crime in NYC, and am working with the census data we use in class to create race maps in NYC. I cannot put the main dataset (gamerbase) in the milestone yet, but I will provide an update on this by Monday afternoon at 6pm. 
+
